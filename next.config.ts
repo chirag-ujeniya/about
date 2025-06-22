@@ -1,11 +1,11 @@
-import type {NextConfig} from 'next';
-const repoName = 'chirag-ujeniya';
+import type { NextConfig } from 'next';
+
+const repoName = 'chirag-ujeniya'; // Make sure this matches your GitHub repo name exactly
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'export', // Export as static site
-  basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '', // Set base path for GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? `/${repoName}/` : '', // Set asset prefix for GitHub Pages
+  output: 'export', // Export as a static site
+  basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '', // Required for GitHub Pages
+  assetPrefix: process.env.NODE_ENV === 'production' ? `/${repoName}/` : '', // Required for GitHub Pages
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -13,25 +13,21 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-         unoptimized: true, // Disable Next.js Image Optimization for static export compatibility
-
+    unoptimized: true, // Disable Next.js image optimization for static export
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'picsum.photos',
-        port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'placehold.co',
-        port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'raw.githubusercontent.com',
-        port: '',
         pathname: '/**',
       },
     ],
