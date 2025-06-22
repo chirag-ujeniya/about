@@ -1,4 +1,5 @@
 import type {NextConfig} from 'next';
+const repoName = 'chirag-ujeniya';
 
 const nextConfig: NextConfig = {
   /* config options here */
