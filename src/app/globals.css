@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 222 47% 11%; /* Deep Navy Blue */
+    --foreground: 45 53% 90%; /* Pale Gold */
+    --card: 222 47% 13%;
+    --card-foreground: 45 53% 90%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 45 53% 90%;
+    --primary: 45 86% 62%; /* Rich Gold */
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 45 53% 90%;
+    --muted: 222 47% 20%;
+    --muted-foreground: 45 53% 75%;
+    --accent: 45 86% 62%; /* Rich Gold */
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 86% 50%;
+    --input: 222 47% 20%;
+    --ring: 45 86% 62%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 50% 50%, hsla(222, 47%, 11%, 0.98) 0%, hsla(222, 47%, 11%, 0.95) 50%, transparent 80%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23b8860b' fill-opacity='0.03'%3E%3Cpath d='M50 0a50 50 0 1 0 50 50A50 50 0 0 0 50 0zm0 88a38 38 0 1 1 38-38 38 38 0 0 1-38 38zm0-62a24 24 0 1 0 24 24 24 24 0 0 0-24-24zm0 40a16 16 0 1 1 16-16 16 16 0 0 1-16 16zM50 8a42 42 0 1 0 42 42A42 42 0 0 0 50 8zm0 76a34 34 0 1 1 34-34 34 34 0 0 1-34 34z'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-attachment: scroll !important;
+  }
+
+  #printable-area,
+  #printable-area * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
