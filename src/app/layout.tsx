@@ -29,7 +29,7 @@ const notoSansGujarati = Noto_Sans_Gujarati({
 
 
 export const metadata: Metadata = {
-  title: 'Chirag Ujeniya - Matrimonial Profile',
+  title: 'Chirag Ujeniya',
   description: 'Personal profile of Chirag Ujeniya for matrimonial purposes.',
 };
 
